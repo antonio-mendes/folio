@@ -1,31 +1,27 @@
-import { buttonVariants } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
 import { profile } from "../../../content/profile";
 
 export function Contact() {
   return (
     <section
       id="contact"
-      className="animate-fade-up scroll-mt-20 border-t border-border/60 py-20"
+      className="scroll-mt-16 border-t border-border/80 py-20"
     >
-      <div className="mx-auto max-w-3xl px-6">
-        <h2 className="font-display text-sm font-semibold tracking-[0.14em] text-accent uppercase">
-          Contact
+      <div className="mx-auto max-w-3xl px-5">
+        <h2 className="font-mono text-[11px] tracking-[0.18em] text-accent uppercase">
+          05 — contact
         </h2>
-        <p className="mt-4 max-w-md font-display text-2xl leading-snug tracking-tight text-foreground sm:text-3xl">
-          Say hello.
+        <p className="font-display mt-6 text-5xl tracking-tight text-foreground italic sm:text-6xl">
+          Write.
         </p>
-        <p className="mt-4 text-muted-foreground">
+        <p className="mt-4 max-w-md text-muted-foreground">
           Based in {profile.location}. Open to interesting conversations.
         </p>
-        <div className="mt-8">
-          <a
-            href={`mailto:${profile.email}`}
-            className={cn(buttonVariants({ size: "lg" }))}
-          >
-            {profile.email}
-          </a>
-        </div>
+        <a
+          href={`mailto:${profile.email}`}
+          className="link-underline mt-8 inline-block font-mono text-sm tracking-wide text-accent"
+        >
+          {profile.email}
+        </a>
       </div>
     </section>
   );

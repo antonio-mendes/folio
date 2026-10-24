@@ -1,32 +1,32 @@
 import Link from "next/link";
-import { buttonVariants } from "@/components/ui/button";
 import { HeroDither } from "@/components/hero-dither";
-import { cn } from "@/lib/utils";
+import { TypeLine } from "@/components/type-line";
 import { profile } from "../../../content/profile";
 
 export function Hero() {
   return (
-    <section className="relative isolate flex min-h-[min(100svh,44rem)] flex-col justify-end overflow-hidden pb-16 pt-28 sm:pb-20 sm:pt-32">
+    <section className="relative isolate flex min-h-[min(100svh,46rem)] flex-col justify-end overflow-hidden pb-16 pt-24 sm:pb-24">
       <HeroDither />
-      <div className="animate-fade-up relative z-10 mx-auto w-full max-w-3xl px-6">
-        <h1 className="font-display text-[clamp(2.75rem,10vw,5rem)] leading-[0.95] font-semibold tracking-tight text-foreground">
+      <div className="animate-fade-up relative z-10 mx-auto w-full max-w-3xl px-5">
+        <p className="font-mono text-[11px] tracking-[0.18em] text-accent uppercase">
+          38.72°n · 9.14°w · {profile.title.toLowerCase()}
+        </p>
+        <h1 className="font-display mt-4 text-[clamp(3.4rem,12vw,6.4rem)] leading-[0.88] font-normal tracking-tight text-foreground italic">
           {profile.name}
         </h1>
-        <p className="mt-5 max-w-md text-base text-muted-foreground sm:text-lg">
-          {profile.title} · {profile.location}
-        </p>
-        <div className="mt-8 flex flex-wrap items-center gap-3">
+        <TypeLine text={profile.tagline} />
+        <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 font-mono text-xs tracking-wide uppercase">
           <a
             href={`mailto:${profile.email}`}
-            className={cn(buttonVariants({ size: "lg" }))}
+            className="link-underline text-foreground transition-colors hover:text-accent"
           >
-            Contact
+            [ contact ]
           </a>
           <Link
             href="/#experience"
-            className={cn(buttonVariants({ variant: "ghost", size: "lg" }))}
+            className="link-underline text-muted-foreground transition-colors hover:text-accent"
           >
-            View experience
+            [ work ]
           </Link>
         </div>
       </div>

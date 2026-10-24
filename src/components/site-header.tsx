@@ -1,28 +1,28 @@
 import Link from "next/link";
 
 const links = [
-  { href: "/#about", label: "About" },
-  { href: "/#experience", label: "Experience" },
-  { href: "/blog", label: "Blog" },
-  { href: "/#contact", label: "Contact" },
+  { href: "/#about", label: "about" },
+  { href: "/#experience", label: "work" },
+  { href: "/blog", label: "notes" },
+  { href: "/#contact", label: "contact" },
 ] as const;
 
 export function SiteHeader() {
   return (
-    <header className="animate-fade-in sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-md">
-      <div className="mx-auto flex h-14 max-w-3xl items-center justify-between px-6">
+    <header className="animate-fade-in sticky top-0 z-50 border-b border-border/80 bg-background/75 backdrop-blur-md">
+      <div className="mx-auto flex h-12 max-w-3xl items-center justify-between px-5">
         <Link
           href="/"
-          className="font-display text-sm font-semibold tracking-tight text-foreground transition-opacity hover:opacity-70"
+          className="font-mono text-[11px] tracking-[0.16em] text-foreground uppercase transition-colors hover:text-accent"
         >
-          António Mendes
+          am<span className="text-accent">/</span>lis
         </Link>
-        <nav className="flex items-center gap-1 sm:gap-4" aria-label="Primary">
+        <nav className="flex items-center gap-0.5 sm:gap-3" aria-label="Primary">
           {links.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="link-underline px-2 py-1 text-xs text-muted-foreground transition-colors hover:text-foreground sm:text-sm"
+              className="link-underline px-1.5 py-1 font-mono text-[11px] tracking-wide text-muted-foreground uppercase transition-colors hover:text-accent sm:px-0"
             >
               {link.label}
             </Link>

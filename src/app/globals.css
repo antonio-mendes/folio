@@ -49,40 +49,40 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
-/* Cool slate paper + muted teal accent — light-only site */
+/* Void + phosphor. Near-black ground, warm off-white type, one green. */
 :root {
-  --background: oklch(0.955 0.008 240);
-  --foreground: oklch(0.22 0.025 250);
-  --card: oklch(0.97 0.006 240);
-  --card-foreground: oklch(0.22 0.025 250);
-  --popover: oklch(0.97 0.006 240);
-  --popover-foreground: oklch(0.22 0.025 250);
-  --primary: oklch(0.28 0.04 230);
-  --primary-foreground: oklch(0.97 0.006 240);
-  --secondary: oklch(0.92 0.01 240);
-  --secondary-foreground: oklch(0.28 0.04 230);
-  --muted: oklch(0.92 0.01 240);
-  --muted-foreground: oklch(0.48 0.02 250);
-  --accent: oklch(0.48 0.07 205);
-  --accent-foreground: oklch(0.97 0.006 240);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.86 0.012 240);
-  --input: oklch(0.86 0.012 240);
-  --ring: oklch(0.48 0.07 205);
+  --background: oklch(0.14 0.012 145);
+  --foreground: oklch(0.93 0.012 95);
+  --card: oklch(0.17 0.012 145);
+  --card-foreground: oklch(0.93 0.012 95);
+  --popover: oklch(0.17 0.012 145);
+  --popover-foreground: oklch(0.93 0.012 95);
+  --primary: oklch(0.86 0.22 145);
+  --primary-foreground: oklch(0.16 0.02 145);
+  --secondary: oklch(0.2 0.012 145);
+  --secondary-foreground: oklch(0.93 0.012 95);
+  --muted: oklch(0.2 0.012 145);
+  --muted-foreground: oklch(0.72 0.02 120);
+  --accent: oklch(0.86 0.22 145);
+  --accent-foreground: oklch(0.16 0.02 145);
+  --destructive: oklch(0.65 0.2 25);
+  --border: oklch(0.32 0.02 145);
+  --input: oklch(0.32 0.02 145);
+  --ring: oklch(0.86 0.22 145);
   --chart-1: oklch(0.48 0.07 205);
   --chart-2: oklch(0.556 0.02 250);
   --chart-3: oklch(0.439 0.02 250);
   --chart-4: oklch(0.371 0.02 250);
   --chart-5: oklch(0.269 0.02 250);
   --radius: 0.4rem;
-  --sidebar: oklch(0.97 0.006 240);
-  --sidebar-foreground: oklch(0.22 0.025 250);
-  --sidebar-primary: oklch(0.28 0.04 230);
-  --sidebar-primary-foreground: oklch(0.97 0.006 240);
-  --sidebar-accent: oklch(0.92 0.01 240);
-  --sidebar-accent-foreground: oklch(0.28 0.04 230);
-  --sidebar-border: oklch(0.86 0.012 240);
-  --sidebar-ring: oklch(0.48 0.07 205);
+  --sidebar: oklch(0.14 0.012 145);
+  --sidebar-foreground: oklch(0.93 0.012 95);
+  --sidebar-primary: oklch(0.86 0.22 145);
+  --sidebar-primary-foreground: oklch(0.16 0.02 145);
+  --sidebar-accent: oklch(0.2 0.012 145);
+  --sidebar-accent-foreground: oklch(0.93 0.012 95);
+  --sidebar-border: oklch(0.32 0.02 145);
+  --sidebar-ring: oklch(0.86 0.22 145);
 }
 
 @layer base {
@@ -95,12 +95,19 @@
   html {
     @apply font-sans scroll-smooth;
   }
+  ::selection {
+    background: oklch(0.86 0.22 145);
+    color: oklch(0.16 0.02 145);
+  }
 }
 
 @layer utilities {
   .font-display {
-    font-family: var(--font-display), var(--font-sans), ui-sans-serif, system-ui,
-      sans-serif;
+    font-family: var(--font-display), Georgia, "Times New Roman", serif;
+  }
+
+  .font-mono {
+    font-family: var(--font-mono), ui-monospace, monospace;
   }
 
   .animate-fade-in {
@@ -144,37 +151,47 @@
   }
 }
 
-/*
-  Hero dither: paper + hard Bayer teal tile, radially masked.
-  Binary (teal / transparent) tile stays crisp; radial mask shapes the blob.
-*/
+/* Phosphor Bayer stipple on the void, held to a soft radial. */
 .hero-dither__paper {
-  background: oklch(0.9 0.01 240);
+  background: oklch(0.14 0.012 145);
 }
 
 .hero-dither__ink {
-  /* 4×4 Bayer: ink on cells where threshold index >= 8 (half density), plus denser overlays */
-  background-image:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' shape-rendering='crispEdges'%3E%3Crect width='4' height='4' fill='%23dce2ea'/%3E%3Crect x='1' y='0' width='1' height='1' fill='%230f4f5c'/%3E%3Crect x='3' y='0' width='1' height='1' fill='%230f4f5c'/%3E%3Crect x='0' y='1' width='1' height='1' fill='%230f4f5c'/%3E%3Crect x='2' y='1' width='1' height='1' fill='%230f4f5c'/%3E%3Crect x='1' y='2' width='1' height='1' fill='%230f4f5c'/%3E%3Crect x='3' y='2' width='1' height='1' fill='%230f4f5c'/%3E%3Crect x='0' y='3' width='1' height='1' fill='%230f4f5c'/%3E%3Crect x='2' y='3' width='1' height='1' fill='%230f4f5c'/%3E%3C/svg%3E"),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' shape-rendering='crispEdges'%3E%3Crect width='4' height='4' fill='transparent'/%3E%3Crect x='0' y='0' width='1' height='1' fill='%230f4f5c'/%3E%3Crect x='2' y='0' width='1' height='1' fill='%230f4f5c'/%3E%3Crect x='1' y='1' width='1' height='1' fill='%230f4f5c'/%3E%3Crect x='3' y='1' width='1' height='1' fill='%230f4f5c'/%3E%3Crect x='0' y='2' width='1' height='1' fill='%230f4f5c'/%3E%3Crect x='2' y='2' width='1' height='1' fill='%230f4f5c'/%3E%3Crect x='1' y='3' width='1' height='1' fill='%230f4f5c'/%3E%3Crect x='3' y='3' width='1' height='1' fill='%230f4f5c'/%3E%3C/svg%3E");
-  background-size: 5px 5px, 5px 5px;
-  background-repeat: repeat, repeat;
-  /* Dense core uses both patterns; edge fades via mask */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' shape-rendering='crispEdges'%3E%3Crect width='4' height='4' fill='%230b0d0b'/%3E%3Crect x='1' y='0' width='1' height='1' fill='%233dff6a'/%3E%3Crect x='3' y='0' width='1' height='1' fill='%233dff6a'/%3E%3Crect x='0' y='1' width='1' height='1' fill='%233dff6a'/%3E%3Crect x='2' y='1' width='1' height='1' fill='%233dff6a'/%3E%3Crect x='1' y='2' width='1' height='1' fill='%233dff6a'/%3E%3Crect x='3' y='2' width='1' height='1' fill='%233dff6a'/%3E%3Crect x='0' y='3' width='1' height='1' fill='%233dff6a'/%3E%3Crect x='2' y='3' width='1' height='1' fill='%233dff6a'/%3E%3C/svg%3E");
+  background-size: 5px 5px;
+  background-repeat: repeat;
+  image-rendering: pixelated;
+  opacity: 0.85;
   -webkit-mask-image: radial-gradient(
-    ellipse 72% 62% at 50% 36%,
+    ellipse 70% 58% at 42% 42%,
     #000 0%,
-    #000 28%,
-    rgba(0, 0, 0, 0.55) 48%,
+    #000 18%,
+    rgba(0, 0, 0, 0.4) 46%,
     transparent 72%
   );
   mask-image: radial-gradient(
-    ellipse 72% 62% at 50% 36%,
+    ellipse 70% 58% at 42% 42%,
     #000 0%,
-    #000 28%,
-    rgba(0, 0, 0, 0.55) 48%,
+    #000 18%,
+    rgba(0, 0, 0, 0.4) 46%,
     transparent 72%
   );
-  animation: dither-drift 20s ease-in-out infinite alternate;
+  animation: dither-drift 22s ease-in-out infinite alternate;
+}
+
+@keyframes caret-blink {
+  0%,
+  45% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.animate-caret {
+  animation: caret-blink 1.1s steps(1) infinite;
 }
 
 @keyframes dither-drift {
@@ -192,7 +209,8 @@
     animation: none;
   }
 
-  .hero-dither__ink {
+  .hero-dither__ink,
+  .animate-caret {
     animation: none;
   }
 

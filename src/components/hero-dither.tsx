@@ -1,6 +1,6 @@
 /**
- * Subtle Bayer-style dither atmosphere for the hero.
- * Pure CSS + SVG (no Canvas/WebGL) so it always paints.
+ * Dark Bayer stipple. CSS only — WebGL and canvas both failed to paint
+ * reliably in this environment.
  */
 export function HeroDither() {
   return (

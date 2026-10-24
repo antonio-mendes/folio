@@ -4,16 +4,13 @@ export function About() {
   return (
     <section
       id="about"
-      className="animate-fade-up scroll-mt-20 border-t border-border/60 py-20"
+      className="scroll-mt-16 border-t border-border/80 py-20"
     >
-      <div className="mx-auto max-w-3xl px-6">
-        <h2 className="font-display text-sm font-semibold tracking-[0.14em] text-accent uppercase">
-          About
+      <div className="mx-auto max-w-3xl px-5">
+        <h2 className="font-mono text-[11px] tracking-[0.18em] text-accent uppercase">
+          01 — about
         </h2>
-        <p className="mt-4 max-w-xl font-display text-2xl leading-snug tracking-tight text-foreground sm:text-3xl">
-          {profile.tagline}
-        </p>
-        <div className="mt-8 max-w-2xl space-y-4 text-base leading-relaxed text-muted-foreground">
+        <div className="mt-8 max-w-2xl space-y-5 text-[17px] leading-relaxed text-foreground/90">
           {profile.about.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
           ))}
