@@ -8,7 +8,7 @@ export function Hero() {
   return (
     <section className="relative isolate flex min-h-[min(100svh,44rem)] flex-col justify-end overflow-hidden pb-16 pt-28 sm:pb-20 sm:pt-32">
       <HeroDither />
-      <div className="animate-fade-up mx-auto w-full max-w-3xl px-6">
+      <div className="animate-fade-up relative z-10 mx-auto w-full max-w-3xl px-6">
         <h1 className="font-display text-[clamp(2.75rem,10vw,5rem)] leading-[0.95] font-semibold tracking-tight text-foreground">
           {profile.name}
         </h1>
