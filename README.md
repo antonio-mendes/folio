@@ -1,6 +1,6 @@
 # António Mendes — personal site
 
-A simple, sleek personal CV site with a scaffold for a future blog.
+A personal CV site with a dark, protocol-page feel and a scaffold for a future blog.
 
 ## Stack
 
@@ -8,13 +8,12 @@ A simple, sleek personal CV site with a scaffold for a future blog.
 - TypeScript
 - Tailwind CSS
 - [shadcn/ui](https://ui.shadcn.com/)
-- Subtle dithered hero via [`@paper-design/shaders-react`](https://github.com/paper-design/shaders)
 
 ## Run locally
 
 ```bash
 npm install
-npm run dev -- --port 43122
+npm run dev
 ```
 
 Open [http://127.0.0.1:43122](http://127.0.0.1:43122).
