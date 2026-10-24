@@ -1,0 +1,97 @@
+export const profile = {
+  name: "António Mendes",
+  title: "Senior Data Scientist",
+  location: "Lisbon, Portugal",
+  email: "soeiromendes.antonio@gmail.com",
+  tagline: "Onchain analytics, product metrics, and data systems that ship.",
+  about: [
+    "I build analytics frameworks and data products for crypto and consumer tech — from dbt models that power company-wide dashboards to onchain pipelines that surface revenue and growth opportunities.",
+    "Currently Senior Data Scientist at Phantom. Previously at Dune (Text-to-SQL / Spellbook) and Adjust (fraud prevention).",
+  ],
+  experience: [
+    {
+      company: "Phantom",
+      role: "Senior Data Scientist",
+      location: "Lisbon · Remote",
+      period: "Apr 2024 – Present",
+      summary:
+        "Multichain self-custodial wallet — analytics for onboarding, multi-chain expansion, Social features, and stablecoin strategy.",
+      bullets: [
+        "Develop and maintain critical dbt models powering company-wide analytics dashboards.",
+        "Optimize onboarding conversion funnels and lead metrics for multi-chain expansion.",
+        "Design analytics for Social features and support product launches with founder-facing insights.",
+        "Work with onchain data to optimize transactions and identify new revenue streams.",
+      ],
+    },
+    {
+      company: "Dune",
+      role: "Senior Data Scientist",
+      location: "Remote",
+      period: "Dec 2022 – Apr 2024",
+      summary:
+        "Blockchain analytics platform — DuneAI Text-to-SQL, vector search, and Spellbook (open-source dbt).",
+      bullets: [
+        "Shipped DuneAI Text-to-SQL products: create, fix, and improve.",
+        "Implemented vector database solutions to improve model latency and accuracy.",
+        "Maintained Spellbook, including the migration to DuneSQL.",
+        "Built automated ingestion of smart contracts and ABIs for decoding.",
+      ],
+    },
+    {
+      company: "Adjust",
+      role: "Fraud Data Science Team Lead",
+      location: "Berlin, Germany",
+      period: "Apr 2020 – Jul 2021",
+      summary:
+        "Mobile attribution SaaS — led anti-fraud research and prevention before the AppLovin acquisition.",
+      bullets: [
+        "Led the data science team for anti-fraud research and prevention.",
+        "Deployed algorithmic fraud models that prevented hundreds of millions in fraudulent spend.",
+        "Presented mobile attribution fraud education in Tokyo and São Paulo.",
+      ],
+    },
+    {
+      company: "BNP Paribas Personal Finance",
+      role: "Junior Data Scientist",
+      location: "Lisbon, Portugal",
+      period: "Jan 2016 – Jun 2017",
+      summary: "Consumer credit — pricing analysis, visualization, A/B testing, and database work.",
+      bullets: [
+        "Conducted pricing analysis and built data visualization tools.",
+        "Supported business cases with analysis, A/B testing, and database management.",
+      ],
+    },
+  ],
+  education: [
+    {
+      school: "Universidade Nova de Lisboa",
+      detail: "Bachelor's Degree, Information Management",
+      period: "2010 – 2015",
+      location: "Lisbon, Portugal",
+    },
+    {
+      school: "University of Ljubljana",
+      detail: "Economics · Erasmus exchange",
+      period: "2015",
+      location: "Ljubljana, Slovenia",
+    },
+    {
+      school: "Instituto Superior Técnico",
+      detail: "Master's coursework, Applied Mathematics",
+      period: "2015",
+      location: "Lisbon, Portugal",
+    },
+  ],
+  skills: [
+    "SQL",
+    "Python",
+    "dbt",
+    "Machine Learning",
+    "Predictive Analytics",
+    "Data Visualization",
+    "Statistical Modeling",
+    "Onchain Data",
+    "Big Data",
+  ],
+  certifications: ["Lisbon Machine Learning School (Google)"],
+} as const;
