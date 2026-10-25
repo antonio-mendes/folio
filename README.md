@@ -18,6 +18,12 @@ npm run dev
 
 Open [http://127.0.0.1:43122](http://127.0.0.1:43122).
 
+## GitHub Pages
+
+Pushes to `main` on GitHub run [`.github/workflows/pages.yml`](.github/workflows/pages.yml). The action builds a static export and publishes it.
+
+A project repository is served at `https://<user>.github.io/<repo>/`. A repository named `<user>.github.io` is served at `https://<user>.github.io/`. In the GitHub repo, set **Settings → Pages → Source** to **GitHub Actions**.
+
 ## Edit content
 
 Profile copy lives in [`content/profile.ts`](content/profile.ts). Update experience, skills, and contact details there.
