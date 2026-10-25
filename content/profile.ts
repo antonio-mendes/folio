@@ -96,6 +96,42 @@ export const profile = {
   certifications: ["Lisbon Machine Learning School (Google)"],
   talks: [
     {
+      role: "Judge",
+      title: "Solana x402 Hackathon",
+      place: "Remote",
+      when: "Oct–Nov 2025",
+      context: "Best Use of CASH",
+    },
+    {
+      role: "Host",
+      title: "DuneCon 2023",
+      place: "Lisbon",
+      when: "2 Nov 2023",
+      context: "Dune",
+    },
+    {
+      role: "Talk",
+      title: "Decoding of EVM Smart Contracts 101",
+      place: "Kyiv",
+      when: "Dec 2022",
+      context: "Ethereum Ukraine",
+    },
+    {
+      role: "Talk",
+      title: "Smart contract decoding",
+      place: "Lisbon",
+      when: "Nov 2022",
+      context: "Dune meetup",
+    },
+    {
+      role: "Talk",
+      title: "Data & Analytics — Uma carreira e um caminho",
+      place: "Webinar",
+      when: "Jan 2021",
+      context: "Conta Connosco",
+    },
+    {
+      role: "Talk",
       title: "Mobile attribution fraud education",
       place: "Tokyo and São Paulo",
       when: "2020–2021",

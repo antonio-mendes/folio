@@ -7,15 +7,17 @@ export function Talks() {
         <h2 className="font-display text-3xl tracking-tight">Talks</h2>
         <ul className="mt-8 max-w-2xl">
           {profile.talks.map((talk) => (
-            <li key={talk.title} className="py-2">
+            <li key={talk.title} className="py-4">
               <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
                 <h3 className="font-display text-2xl tracking-tight">
                   {talk.title}
                 </h3>
-                <p className="text-sm text-muted-foreground">{talk.when}</p>
+                <p className="shrink-0 text-sm text-muted-foreground">
+                  {talk.when}
+                </p>
               </div>
               <p className="mt-2 text-sm text-muted-foreground">
-                {talk.place} · {talk.context}
+                {talk.role} · {talk.place} · {talk.context}
               </p>
             </li>
           ))}
