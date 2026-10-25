@@ -1,32 +1,30 @@
 import Link from "next/link";
-import { HeroDither } from "@/components/hero-dither";
-import { TypeLine } from "@/components/type-line";
+import { GlyphPlot } from "@/components/glyph-plot";
 import { profile } from "../../../content/profile";
 
 export function Hero() {
   return (
-    <section className="relative isolate flex min-h-[min(100svh,46rem)] flex-col justify-end overflow-hidden pb-16 pt-24 sm:pb-24">
-      <HeroDither />
-      <div className="animate-fade-up relative z-10 mx-auto w-full max-w-3xl px-5">
-        <p className="font-mono text-[11px] tracking-[0.18em] text-accent uppercase">
-          38.72°n · 9.14°w · {profile.title.toLowerCase()}
+    <section className="animate-fade-up mx-auto grid min-h-[min(100svh,52rem)] max-w-6xl items-center gap-12 px-6 py-16 sm:px-12 lg:grid-cols-2 lg:gap-16 lg:py-24">
+      <GlyphPlot />
+      <div>
+        <p className="font-mono text-xs tracking-wide text-muted-foreground">
+          {profile.location}
         </p>
-        <h1 className="font-display mt-4 text-[clamp(3.4rem,12vw,6.4rem)] leading-[0.88] font-normal tracking-tight text-foreground italic">
+        <h1 className="font-display mt-4 text-[clamp(3.2rem,7vw,5.25rem)] leading-[0.95] font-normal tracking-tight text-foreground">
           {profile.name}
         </h1>
-        <TypeLine text={profile.tagline} />
-        <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 font-mono text-xs tracking-wide uppercase">
+        <p className="mt-6 max-w-md text-lg leading-relaxed text-foreground/80">
+          {profile.tagline}
+        </p>
+        <div className="mt-8 flex gap-6 text-sm">
           <a
             href={`mailto:${profile.email}`}
-            className="link-underline text-foreground transition-colors hover:text-accent"
+            className="border-b border-foreground pb-0.5"
           >
-            [ contact ]
+            Contact
           </a>
-          <Link
-            href="/#experience"
-            className="link-underline text-muted-foreground transition-colors hover:text-accent"
-          >
-            [ work ]
+          <Link href="/#experience" className="border-b border-foreground pb-0.5">
+            Work
           </Link>
         </div>
       </div>

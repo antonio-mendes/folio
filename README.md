@@ -1,6 +1,6 @@
 # António Mendes — personal site
 
-A personal CV site with a dark, protocol-page feel and a scaffold for a future blog.
+A personal CV site on warm paper, with a small glyph drawing beside the name and a scaffold for a future blog.
 
 ## Stack
 
