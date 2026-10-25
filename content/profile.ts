@@ -94,4 +94,12 @@ export const profile = {
     "Big Data",
   ],
   certifications: ["Lisbon Machine Learning School (Google)"],
+  talks: [
+    {
+      title: "Mobile attribution fraud education",
+      place: "Tokyo and São Paulo",
+      when: "2020–2021",
+      context: "Adjust",
+    },
+  ],
 } as const;

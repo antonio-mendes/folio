@@ -6,7 +6,7 @@ export function Contact() {
       <div className="mx-auto max-w-6xl px-6 sm:px-12">
         <h2 className="font-display text-3xl tracking-tight">Contact</h2>
         <p className="mt-6 max-w-md text-foreground/80">
-          Based in {profile.location}. Open to interesting conversations.
+          Based in {profile.location}.
         </p>
         <a
           href={`mailto:${profile.email}`}
