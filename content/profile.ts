@@ -3,63 +3,47 @@ export const profile = {
   title: "Senior Data Scientist",
   location: "Lisbon, Portugal",
   email: "soeiromendes.antonio@gmail.com",
-  tagline: "Onchain analytics, product metrics, and data systems that ship.",
-  about: [
-    "I build analytics frameworks and data products for crypto and consumer tech — from dbt models that power company-wide dashboards to onchain pipelines that surface revenue and growth opportunities.",
-    "Currently Senior Data Scientist at Phantom. Previously at Dune (Text-to-SQL / Spellbook) and Adjust (fraud prevention).",
+  // Used for the page description and link previews.
+  tagline: "Data scientist working on crypto products.",
+  intro: [
+    "Hi, I'm António. I'm a data scientist working on crypto products.",
+    "Now at Phantom. Before that, Dune and Adjust.",
+  ],
+  // Shown after the email link under the intro.
+  links: [
+    { label: "GitHub", href: "https://github.com/antonio-mendes" },
+    { label: "X", href: "https://x.com/antonio_smendes" },
   ],
   experience: [
     {
       company: "Phantom",
+      url: "https://phantom.com",
       role: "Senior Data Scientist",
-      location: "Lisbon · Remote",
-      period: "Apr 2024 – Present",
+      period: "2024 – now",
       summary:
-        "Multichain self-custodial wallet — analytics for onboarding, multi-chain expansion, Social features, and stablecoin strategy.",
-      bullets: [
-        "Develop and maintain critical dbt models powering company-wide analytics dashboards.",
-        "Optimize onboarding conversion funnels and lead metrics for multi-chain expansion.",
-        "Design analytics for Social features and support product launches with founder-facing insights.",
-        "Work with onchain data to optimize transactions and identify new revenue streams.",
-      ],
+        "Product analytics for onboarding, multichain expansion, Social and stablecoins, and the dbt models behind company-wide dashboards.",
     },
     {
       company: "Dune",
+      url: "https://dune.com",
       role: "Senior Data Scientist",
-      location: "Remote",
-      period: "Dec 2022 – Apr 2024",
+      period: "2022 – 2024",
       summary:
-        "Blockchain analytics platform — DuneAI Text-to-SQL, vector search, and Spellbook (open-source dbt).",
-      bullets: [
-        "Shipped DuneAI Text-to-SQL products: create, fix, and improve.",
-        "Implemented vector database solutions to improve model latency and accuracy.",
-        "Maintained Spellbook, including the migration to DuneSQL.",
-        "Built automated ingestion of smart contracts and ABIs for decoding.",
-      ],
+        "Shipped DuneAI Text-to-SQL and maintained Spellbook, Dune's open-source dbt project, through the DuneSQL migration.",
     },
     {
       company: "Adjust",
+      url: "https://www.adjust.com",
       role: "Fraud Data Science Team Lead",
-      location: "Berlin, Germany",
-      period: "Apr 2020 – Jul 2021",
+      period: "2020 – 2021",
       summary:
-        "Mobile attribution SaaS — led anti-fraud research and prevention before the AppLovin acquisition.",
-      bullets: [
-        "Led the data science team for anti-fraud research and prevention.",
-        "Deployed algorithmic fraud models that prevented hundreds of millions in fraudulent spend.",
-        "Presented mobile attribution fraud education in Tokyo and São Paulo.",
-      ],
+        "Led the fraud data science team. Our models prevented hundreds of millions in fraudulent spend.",
     },
     {
       company: "BNP Paribas Personal Finance",
       role: "Junior Data Scientist",
-      location: "Lisbon, Portugal",
-      period: "Jan 2016 – Jun 2017",
-      summary: "Consumer credit — pricing analysis, visualization, A/B testing, and database work.",
-      bullets: [
-        "Conducted pricing analysis and built data visualization tools.",
-        "Supported business cases with analysis, A/B testing, and database management.",
-      ],
+      period: "2016 – 2017",
+      summary: "Pricing analysis, dashboards and A/B tests for consumer credit.",
     },
   ],
   education: [
@@ -86,56 +70,41 @@ export const profile = {
     "SQL",
     "Python",
     "dbt",
-    "Machine Learning",
-    "Predictive Analytics",
-    "Data Visualization",
-    "Statistical Modeling",
-    "Onchain Data",
-    "Big Data",
+    "onchain data",
+    "statistical modeling",
+    "machine learning",
+    "data visualization",
   ],
   certifications: ["Lisbon Machine Learning School (Google)"],
   talks: [
     {
-      role: "Judge",
-      title: "Solana x402 Hackathon",
-      place: "Remote",
-      when: "Oct–Nov 2025",
-      context: "Best Use of CASH",
-    },
-    {
-      role: "Host",
-      title: "DuneCon 2023",
-      place: "Lisbon",
-      when: "2 Nov 2023",
-      context: "Dune",
-    },
-    {
-      role: "Talk",
       title: "Decoding of EVM Smart Contracts 101",
       place: "Kyiv",
       when: "Dec 2022",
       context: "Ethereum Ukraine",
     },
     {
-      role: "Talk",
       title: "Smart contract decoding",
       place: "Lisbon",
       when: "Nov 2022",
       context: "Dune meetup",
     },
     {
-      role: "Talk",
       title: "Data & Analytics — Uma carreira e um caminho",
       place: "Webinar",
       when: "Jan 2021",
       context: "Conta Connosco",
     },
     {
-      role: "Talk",
       title: "Mobile attribution fraud education",
       place: "Tokyo and São Paulo",
       when: "2020–2021",
       context: "Adjust",
     },
+  ],
+  // Not talks, but worth listing next to them.
+  events: [
+    { role: "Judge", title: "Solana x402 Hackathon", when: "2025" },
+    { role: "Host", title: "DuneCon", when: "2023" },
   ],
 } as const;

@@ -1,21 +1,20 @@
 import Link from "next/link";
+import { profile } from "../../content/profile";
 
 const links = [
-  { href: "/#about", label: "About" },
-  { href: "/#experience", label: "Work" },
+  { href: "/#work", label: "Work" },
   { href: "/#talks", label: "Talks" },
-  { href: "/blog", label: "Notes" },
-  { href: "/#contact", label: "Contact" },
+  { href: "/#education", label: "Education" },
 ] as const;
 
 export function SiteHeader() {
   return (
-    <header className="animate-fade-in sticky top-0 z-50 bg-background/85 backdrop-blur-md">
-      <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-6 sm:px-12">
-        <Link href="/" className="text-sm text-foreground">
-          António Mendes
+    <header className="sticky top-0 z-50 bg-background/85 backdrop-blur-md">
+      <div className="mx-auto flex h-14 max-w-2xl items-center justify-between gap-6 px-6">
+        <Link href="/" className="text-sm whitespace-nowrap">
+          {profile.name}
         </Link>
-        <nav className="flex items-center gap-3 sm:gap-6" aria-label="Primary">
+        <nav className="flex items-center gap-5" aria-label="Primary">
           {links.map((link) => (
             <Link
               key={link.href}

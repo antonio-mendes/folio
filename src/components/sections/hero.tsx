@@ -1,33 +1,58 @@
-import Link from "next/link";
-import { GlyphPlot } from "@/components/glyph-plot";
+import { Fragment } from "react";
 import { profile } from "../../../content/profile";
 
+const companyUrls = new Map<string, string>(
+  profile.experience.flatMap((job) => ("url" in job ? [[job.company, job.url]] : [])),
+);
+const companyPattern = new RegExp(`\\b(${[...companyUrls.keys()].join("|")})\\b`);
+
+// Turns company names from the work list into links wherever they appear in a line.
+function withCompanyLinks(line: string) {
+  return line.split(companyPattern).map((part, index) => {
+    const url = companyUrls.get(part);
+    return url ? (
+      <a key={index} href={url} className="link" target="_blank" rel="noreferrer">
+        {part}
+      </a>
+    ) : (
+      part
+    );
+  });
+}
+
 export function Hero() {
+  const links = [
+    { label: "Email", href: `mailto:${profile.email}` },
+    ...profile.links,
+  ];
+
   return (
-    <section className="animate-fade-up mx-auto grid min-h-[min(100svh,52rem)] max-w-6xl items-center gap-12 px-6 py-16 sm:px-12 lg:grid-cols-2 lg:gap-16 lg:py-24">
-      <GlyphPlot />
-      <div>
-        <p className="font-mono text-xs tracking-wide text-muted-foreground">
-          {profile.location}
-        </p>
-        <h1 className="font-display mt-4 text-[clamp(3.2rem,7vw,5.25rem)] leading-[0.95] font-normal tracking-tight text-foreground">
-          {profile.name}
-        </h1>
-        <p className="mt-6 max-w-md text-lg leading-relaxed text-foreground/80">
-          {profile.tagline}
-        </p>
-        <div className="mt-8 flex gap-6 text-sm">
-          <a
-            href={`mailto:${profile.email}`}
-            className="border-b border-foreground pb-0.5"
-          >
-            Contact
-          </a>
-          <Link href="/#experience" className="border-b border-foreground pb-0.5">
-            Work
-          </Link>
-        </div>
+    <section className="animate-fade-up pt-48 pb-20 sm:pt-64">
+      <h1 className="font-display text-[clamp(2.75rem,8vw,4rem)] leading-none tracking-tight">
+        {profile.name}
+      </h1>
+      <p className="mt-3 font-mono text-xs text-muted-foreground">
+        {profile.title} · {profile.location}
+      </p>
+      <div className="mt-8 space-y-4 text-[17px] leading-relaxed text-foreground/85">
+        {profile.intro.map((line) => (
+          <p key={line}>{withCompanyLinks(line)}</p>
+        ))}
       </div>
+      <p className="mt-8 font-mono text-sm lowercase">
+        {links.map((link, index) => (
+          <Fragment key={link.href}>
+            {index > 0 && <span className="text-muted-foreground"> / </span>}
+            <a
+              href={link.href}
+              className="link"
+              {...(link.href.startsWith("http") && { target: "_blank", rel: "noreferrer" })}
+            >
+              {link.label}
+            </a>
+          </Fragment>
+        ))}
+      </p>
     </section>
   );
 }

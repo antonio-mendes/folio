@@ -1,19 +1,18 @@
 # António Mendes — personal site
 
-A personal CV site on warm paper, with a small glyph drawing beside the name and a scaffold for a future blog.
+A personal CV site on warm paper, with a slow dithered field behind the header and a scaffold for a future blog.
 
 ## Stack
 
 - [Next.js](https://nextjs.org/) (App Router)
 - TypeScript
 - Tailwind CSS
-- [shadcn/ui](https://ui.shadcn.com/)
 
 ## Run locally
 
 ```bash
 npm install
-npm run dev
+npm run dev   # needs Node 20.9+
 ```
 
 Open [http://127.0.0.1:43122](http://127.0.0.1:43122).
@@ -26,11 +25,11 @@ A project repository is served at `https://<user>.github.io/<repo>/`. A reposito
 
 ## Edit content
 
-Profile copy lives in [`content/profile.ts`](content/profile.ts). Update experience, skills, and contact details there.
+Profile copy lives in [`content/profile.ts`](content/profile.ts). Update experience, talks, skills, and links there.
 
 ## Routes
 
 | Path | Description |
 |------|-------------|
-| `/` | CV home (hero, about, experience, education/skills, contact) |
-| `/blog` | Blog scaffold — empty state until posts are added |
+| `/` | CV home (intro, work, talks, education/skills) |
+| `/blog` | Blog scaffold — empty state until posts are added (not linked from the nav yet) |
