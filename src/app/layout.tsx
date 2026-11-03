@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Mono, IBM_Plex_Sans, Instrument_Serif } from "next/font/google";
+import { DitherField } from "@/components/dither-field";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { profile } from "../../content/profile";
@@ -29,7 +30,12 @@ export const metadata: Metadata = {
     default: `${profile.name}`,
     template: `%s · ${profile.name}`,
   },
-  description: `${profile.title} based in ${profile.location}. ${profile.tagline}`,
+  description: `${profile.tagline} Based in ${profile.location}.`,
+  openGraph: {
+    title: profile.name,
+    description: profile.tagline,
+    type: "website",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -38,9 +44,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${plexSans.variable} ${instrument.variable} ${plexMono.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col">
+      <body className="relative isolate flex min-h-full flex-col">
+        <DitherField />
         <SiteHeader />
-        <main className="flex-1">{children}</main>
+        <main className="mx-auto w-full max-w-2xl flex-1 px-6">{children}</main>
         <SiteFooter />
       </body>
     </html>

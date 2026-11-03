@@ -2,44 +2,32 @@ import { profile } from "../../../content/profile";
 
 export function Experience() {
   return (
-    <section
-      id="experience"
-      className="scroll-mt-16 border-t border-border py-20"
-    >
-      <div className="mx-auto max-w-6xl px-6 sm:px-12">
-        <h2 className="font-display text-3xl tracking-tight">Work</h2>
-        <ol className="mt-10 max-w-2xl">
-          {profile.experience.map((job) => (
-            <li
-              key={`${job.company}-${job.period}`}
-              className="border-t border-border py-10 first:border-t-0 first:pt-2"
-            >
-              <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
-                <h3 className="font-display text-3xl tracking-tight">
-                  {job.company}
-                </h3>
-                <time className="text-sm text-muted-foreground">{job.period}</time>
-              </div>
-              <p className="mt-2 text-sm text-muted-foreground">
-                {job.role} · {job.location}
-              </p>
-              <p className="mt-4 text-sm leading-relaxed text-foreground/80">
-                {job.summary}
-              </p>
-              <ul className="mt-4 space-y-2 text-sm leading-relaxed text-foreground/80">
-                {job.bullets.map((bullet) => (
-                  <li key={bullet} className="flex gap-3">
-                    <span className="text-muted-foreground" aria-hidden>
-                      –
-                    </span>
-                    <span>{bullet}</span>
-                  </li>
-                ))}
-              </ul>
-            </li>
-          ))}
-        </ol>
-      </div>
+    <section id="work" className="scroll-mt-16 border-t border-border py-16">
+      <h2 className="font-mono text-xs text-muted-foreground">Work</h2>
+      <ol className="mt-8 space-y-8">
+        {profile.experience.map((job) => (
+          <li key={job.company}>
+            <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
+              <h3 className="font-display text-xl tracking-tight">
+                {"url" in job ? (
+                  <a href={job.url} className="link" target="_blank" rel="noreferrer">
+                    {job.company}
+                  </a>
+                ) : (
+                  job.company
+                )}
+                <span className="font-sans text-sm tracking-normal text-muted-foreground">
+                  {" "}· {job.role}
+                </span>
+              </h3>
+              <p className="shrink-0 text-sm text-muted-foreground">{job.period}</p>
+            </div>
+            <p className="mt-1.5 max-w-xl text-sm leading-relaxed text-foreground/80">
+              {job.summary}
+            </p>
+          </li>
+        ))}
+      </ol>
     </section>
   );
 }
