@@ -49,6 +49,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <SiteHeader />
         <main className="mx-auto w-full max-w-2xl flex-1 px-6">{children}</main>
         <SiteFooter />
+        <DitherField placement="bottom" />
       </body>
     </html>
   );
