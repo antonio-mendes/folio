@@ -5,6 +5,12 @@ import { profile } from "../../../content/profile";
 export const metadata: Metadata = {
   title: "Notes",
   description: "Writing, when there is some.",
+  alternates: {
+    canonical: "/blog",
+  },
+  openGraph: {
+    url: "/blog",
+  },
 };
 
 export default function BlogPage() {

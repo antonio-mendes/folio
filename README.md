@@ -19,9 +19,9 @@ Open [http://127.0.0.1:43122](http://127.0.0.1:43122).
 
 ## GitHub Pages
 
-Pushes to `main` on GitHub run [`.github/workflows/pages.yml`](.github/workflows/pages.yml). The action builds a static export and publishes it.
+Pushes to `main` on GitHub run [`.github/workflows/pages.yml`](.github/workflows/pages.yml). The action builds a static export and publishes it at [https://antoniomendes.dev](https://antoniomendes.dev) (the domain root, with no repository prefix).
 
-A project repository is served at `https://<user>.github.io/<repo>/`. A repository named `<user>.github.io` is served at `https://<user>.github.io/`. In the GitHub repo, set **Settings → Pages → Source** to **GitHub Actions**.
+In the GitHub repo, set **Settings → Pages → Source** to **GitHub Actions** and **Custom domain** to `antoniomendes.dev`, then enable **Enforce HTTPS**. [`public/CNAME`](public/CNAME) records that domain.
 
 ## Edit content
 
