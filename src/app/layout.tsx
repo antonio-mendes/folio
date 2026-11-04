@@ -25,16 +25,24 @@ const plexMono = IBM_Plex_Mono({
   weight: ["400", "500"],
 });
 
+const siteUrl = "https://antoniomendes.dev";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
     default: `${profile.name}`,
     template: `%s · ${profile.name}`,
   },
   description: `${profile.tagline} Based in ${profile.location}.`,
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: profile.name,
     description: profile.tagline,
     type: "website",
+    url: "/",
+    siteName: profile.name,
   },
 };
 
