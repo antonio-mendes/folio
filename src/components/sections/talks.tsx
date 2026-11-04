@@ -1,8 +1,10 @@
+import { DitherRule } from "@/components/dither-rule";
 import { profile } from "../../../content/profile";
 
 export function Talks() {
   return (
-    <section id="talks" className="scroll-mt-16 border-t border-border py-16">
+    <section id="talks" className="scroll-mt-16 pb-16">
+      <DitherRule className="mb-16" />
       <h2 className="font-mono text-xs text-muted-foreground">Talks</h2>
       <ul className="mt-8 space-y-6">
         {profile.talks.map((talk) => (
