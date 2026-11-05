@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Mono, IBM_Plex_Sans, Instrument_Serif } from "next/font/google";
+import { AnimatedFavicon } from "@/components/animated-favicon";
 import { DitherField } from "@/components/dither-field";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -53,6 +54,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${plexSans.variable} ${instrument.variable} ${plexMono.variable} h-full antialiased`}
     >
       <body className="relative isolate flex min-h-full flex-col">
+        <AnimatedFavicon />
         <DitherField />
         <SiteHeader />
         <main className="mx-auto w-full max-w-2xl flex-1 px-6">{children}</main>
