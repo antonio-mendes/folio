@@ -13,6 +13,7 @@ export const profile = {
   links: [
     { label: "GitHub", href: "https://github.com/antonio-mendes" },
     { label: "X", href: "https://x.com/antonio_smendes" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/antoniosmendes/" },
   ],
   experience: [
     {
