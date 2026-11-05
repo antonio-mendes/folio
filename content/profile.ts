@@ -58,6 +58,13 @@ export const profile = {
       // Key into the logo components in src/components/sections/projects.tsx.
       logo: "olhamisto",
     },
+    {
+      name: "Men10",
+      url: "https://open.spotify.com/artist/2GcDe4oqeMII9AUAxSSswZ",
+      period: "2021 – unfinished",
+      summary: "Beatmaking.",
+      logo: "men10",
+    },
   ],
   education: [
     {
