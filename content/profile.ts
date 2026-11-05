@@ -52,6 +52,9 @@ export const profile = {
     {
       name: "olhamisto.pt",
       url: "https://olhamisto.pt",
+      period: "2026",
+      summary:
+        "A phone app for reporting a street problem to the right parish council or city hall, anywhere in Portugal. Take a photo, drop a pin, and it finds who to email and writes the message. No account.",
     },
   ],
   education: [
