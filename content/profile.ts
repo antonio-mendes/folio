@@ -47,6 +47,13 @@ export const profile = {
       summary: "Pricing analysis, dashboards and A/B tests for consumer credit.",
     },
   ],
+  // Side projects. `summary` and `period` are optional.
+  projects: [
+    {
+      name: "olhamisto.pt",
+      url: "https://olhamisto.pt",
+    },
+  ],
   education: [
     {
       school: "Universidade Nova de Lisboa",
