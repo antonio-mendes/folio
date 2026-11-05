@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { GeistSerif } from "geist/font/serif";
 import {
   Bodoni_Moda,
   DM_Serif_Display,
@@ -21,13 +22,14 @@ const newsreader = Newsreader({ subsets: ["latin"], style: ["normal", "italic"] 
 const geist = Geist({ subsets: ["latin"] });
 
 const candidates = [
+  { label: "Geist Serif (geist@1.9.1)", font: GeistSerif },
   { label: "Instrument Serif (current)", font: instrument },
   { label: "Bodoni Moda (closest to Bodoni/“Brodine”)", font: bodoni },
   { label: "Playfair Display", font: playfair },
   { label: "DM Serif Display", font: dmSerif },
   { label: "Fraunces", font: fraunces },
   { label: "Newsreader", font: newsreader },
-  { label: "Geist (sans; Geist Serif isn’t on Google Fonts)", font: geist },
+  { label: "Geist (sans)", font: geist },
 ];
 
 export default function FontsPage() {
