@@ -61,7 +61,7 @@ export const profile = {
     {
       name: "Men10",
       url: "https://open.spotify.com/artist/2GcDe4oqeMII9AUAxSSswZ",
-      period: "2021 – unfinished",
+      period: "2012 – unfinished",
       summary: "Beatmaking.",
       logo: "men10",
     },
