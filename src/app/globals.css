@@ -156,6 +156,24 @@
   }
 }
 
+/* Men10 nods on the beat: down 2px, then back. Whole pixels keep the sprite crisp. */
+.men10-nod {
+  animation: men10-nod 667ms step-end infinite;
+}
+
+@keyframes men10-nod {
+  0% {
+    transform: translateY(0);
+  }
+  12% {
+    transform: translateY(2px);
+  }
+  40%,
+  100% {
+    transform: translateY(0);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-fade-up {
     animation: none;
@@ -164,7 +182,8 @@
   .olhamisto-eye,
   .olhamisto-eye .eye-lid,
   .olhamisto-eye .eye-lid-half,
-  .olhamisto-eye .eye-pupil {
+  .olhamisto-eye .eye-pupil,
+  .men10-nod {
     animation: none;
   }
 

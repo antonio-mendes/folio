@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { ReactNode } from "react";
 import { DitherRule } from "@/components/dither-rule";
 import { OlhamistoEye } from "@/components/olhamisto-eye";
@@ -5,6 +6,17 @@ import { profile } from "../../../content/profile";
 
 const logos = {
   olhamisto: <OlhamistoEye size={48} />,
+  // A 32×32 pixel version of the Men10 illustration. It nods along at 90 BPM.
+  men10: (
+    <Image
+      src="/projects/men10.svg"
+      alt=""
+      width={48}
+      height={48}
+      unoptimized
+      className="men10-nod"
+    />
+  ),
 } satisfies Record<string, ReactNode>;
 
 type Project = {
