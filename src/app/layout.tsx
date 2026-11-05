@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Mono, IBM_Plex_Sans, Instrument_Serif } from "next/font/google";
+import { GeistSerif } from "geist/font/serif";
+import { IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google";
 import { AnimatedFavicon } from "@/components/animated-favicon";
 import { DitherField } from "@/components/dither-field";
 import { SiteFooter } from "@/components/site-footer";
@@ -11,13 +12,6 @@ const plexSans = IBM_Plex_Sans({
   variable: "--font-sans",
   subsets: ["latin"],
   weight: ["400", "500"],
-});
-
-const instrument = Instrument_Serif({
-  variable: "--font-display",
-  subsets: ["latin"],
-  weight: "400",
-  style: ["normal", "italic"],
 });
 
 const plexMono = IBM_Plex_Mono({
@@ -51,7 +45,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${plexSans.variable} ${instrument.variable} ${plexMono.variable} h-full antialiased`}
+      className={`${plexSans.variable} ${GeistSerif.variable} ${plexMono.variable} h-full antialiased`}
     >
       <body className="relative isolate flex min-h-full flex-col">
         <AnimatedFavicon />

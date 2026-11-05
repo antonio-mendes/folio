@@ -8,7 +8,7 @@
   --color-ring: var(--ring);
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);
-  --font-display: var(--font-display);
+  --font-display: var(--font-geist-serif);
 }
 
 /* Warm paper, ink, and a quiet olive. */
@@ -38,7 +38,7 @@
 
 @layer utilities {
   .font-display {
-    font-family: var(--font-display), Georgia, "Times New Roman", serif;
+    font-family: var(--font-geist-serif), Georgia, "Times New Roman", serif;
   }
 
   .font-mono {
