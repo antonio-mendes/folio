@@ -47,7 +47,7 @@ export const profile = {
       summary: "Pricing analysis, dashboards and A/B tests for consumer credit.",
     },
   ],
-  // Side projects. `summary` and `period` are optional.
+  // Side projects. `summary`, `period` and `logo` are optional.
   projects: [
     {
       name: "olhamisto.pt",
@@ -55,6 +55,8 @@ export const profile = {
       period: "2026",
       summary:
         "A phone app for reporting a street problem to the right parish council or city hall, anywhere in Portugal. Take a photo, drop a pin, and it finds who to email and writes the message. No account.",
+      // Key into the logo components in src/components/sections/projects.tsx.
+      logo: "olhamisto",
     },
   ],
   education: [

@@ -71,8 +71,100 @@
   }
 }
 
+/* Olhamisto's pixel eye, as in the app: it bobs, and every 6s it blinks and
+   glances sideways. step-end holds each frame so it moves in whole pixels. */
+.olhamisto-eye {
+  animation: olhamisto-peek 2.8s ease-in-out infinite;
+}
+
+.olhamisto-eye .eye-lid,
+.olhamisto-eye .eye-lid-half,
+.olhamisto-eye .eye-pupil {
+  animation-duration: 6s;
+  animation-timing-function: step-end;
+  animation-iteration-count: infinite;
+}
+
+.olhamisto-eye .eye-lid {
+  animation-name: olhamisto-lid;
+}
+
+.olhamisto-eye .eye-lid-half {
+  animation-name: olhamisto-lid-half;
+}
+
+.olhamisto-eye .eye-pupil {
+  animation-name: olhamisto-glance;
+}
+
+@keyframes olhamisto-peek {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes olhamisto-lid {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  52%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes olhamisto-lid-half {
+  0% {
+    opacity: 0;
+  }
+  48.5% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  52% {
+    opacity: 1;
+  }
+  53.5%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* In SVG user units: 1px here is one pixel of the 16x16 grid. */
+@keyframes olhamisto-glance {
+  0% {
+    transform: translateX(0);
+  }
+  68% {
+    transform: translateX(-4px);
+  }
+  80% {
+    transform: translateX(1px);
+  }
+  86%,
+  100% {
+    transform: translateX(0);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-fade-up {
+    animation: none;
+  }
+
+  .olhamisto-eye,
+  .olhamisto-eye .eye-lid,
+  .olhamisto-eye .eye-lid-half,
+  .olhamisto-eye .eye-pupil {
     animation: none;
   }
 
