@@ -2,6 +2,7 @@ import Image from "next/image";
 import type { ReactNode } from "react";
 import { DitherRule } from "@/components/dither-rule";
 import { OlhamistoEye } from "@/components/olhamisto-eye";
+import { OnionHandheld } from "@/components/onion-handheld";
 import { profile } from "../../../content/profile";
 
 const logos = {
@@ -17,6 +18,7 @@ const logos = {
       className="men10-nod"
     />
   ),
+  onionThemes: <OnionHandheld size={48} />,
 } satisfies Record<string, ReactNode>;
 
 type Project = {

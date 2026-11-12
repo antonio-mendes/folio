@@ -65,6 +65,14 @@ export const profile = {
       summary: "Beatmaking.",
       logo: "men10",
     },
+    {
+      name: "onion-themes",
+      url: "https://github.com/antonio-mendes/onion-themes",
+      period: "2026",
+      summary:
+        "Four generative terrain themes for Onion OS on the Miyoo Mini: Landform, in ordered dither, and Keep, in isometric blocks. One Python script generates each theme's icons, screens, sounds and charging animation.",
+      logo: "onionThemes",
+    },
   ],
   education: [
     {
